@@ -1,6 +1,6 @@
 # LEIA-ME #
 
-* Este README visa explicar o projeto como um todo e resolver algumas dúvidas sobre a execução.
+* Este documento visa explicar o projeto como um todo e resolver algumas dúvidas sobre a execução.
 
 ### Para que serve esse projeto? ###
 * O projeto visa realizar a leitura de um arquivo .log gerado pelo servidor do jogo Quake 3 e através desta leitura verifica alguns eventos durante os jogos. Aqui é usado ​​como linguagem de programação o Java, em um projeto Maven para o caso de dependências e testes. Usa o arquivo comum que lê a biblioteca Java Dickey com expressão regular. Versão 0.0.1
@@ -22,7 +22,7 @@
 --------------------------------------------------------------------------------------------------------------------------------
 # README #
 
-* This README aims to explain the project as a whole and address some doubts about the execution.
+* This document aims to explain the project as a whole and address some doubts about the execution.
 
 ### What is this repository for? ###
 * The project aims to carry out the reading of a file .log generator for the game Quake 3 and through this reading check some events during the games.
