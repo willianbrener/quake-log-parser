@@ -19,9 +19,6 @@
 * Testes
 * >test mvn.
 
-### Com quem eu converso? ###
-* Willian Brener Neves Dias
-* https://www.linkedin.com/in/willian-brener-84673158?trk=hp-identity-name
 --------------------------------------------------------------------------------------------------------------------------------
 # README #
 
@@ -45,7 +42,3 @@ Version *0.0.1*
 * >Without.
 * How to run tests
 * >mvn test.
-
-### Who do I talk to? ###
-* Willian Brener Neves Dias
-* https://www.linkedin.com/in/willian-brener-84673158?trk=hp-identity-name
