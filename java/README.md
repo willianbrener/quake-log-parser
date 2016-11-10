@@ -9,7 +9,7 @@
 * Basicamente para "executar" o aplicativo principal (Parser), basta clicar em Run Java Application, levando em consideração o fato de que estamos usando o Eclipse ou qualquer IDE semelhante. Se você não usar, basta ter o Java instalado no seu computador e digitando a seguinte linha de comando "javac ReadWithScanner.java" e depois "java ReadWithScanner.class", visto que o caminho do .log deve ser especificado na variável filePathOfLog ReadWithScanner class.
 
 ### Configuração ###
-* Java
+* Java 
 * >Jdk 7 ou mais atualizado.
 * >Eclipse ou semelhante.
 * Dependências
