@@ -1,12 +1,12 @@
 # LEIA-ME #
 
-Este README visa explicar o projeto como um todo e resolver algumas dúvidas sobre a execução.
+* Este README visa explicar o projeto como um todo e resolver algumas dúvidas sobre a execução.
 
 ### Para que serve esse projeto? ###
-O projeto visa realizar a leitura de um arquivo .log gerado pelo servidor do jogo Quake 3 e através desta leitura verifica alguns eventos durante os jogos. Aqui é usado ​​como linguagem de programação o Java, em um projeto Maven para o caso de dependências e testes. Usa o arquivo comum que lê a biblioteca Java Dickey com expressão regular. Versão 0.0.1
+* O projeto visa realizar a leitura de um arquivo .log gerado pelo servidor do jogo Quake 3 e através desta leitura verifica alguns eventos durante os jogos. Aqui é usado ​​como linguagem de programação o Java, em um projeto Maven para o caso de dependências e testes. Usa o arquivo comum que lê a biblioteca Java Dickey com expressão regular. Versão 0.0.1
 
 ### Como faço para configurar? ###
-Basicamente para "executar" o aplicativo principal (Parser), basta clicar em Run Java Application, levando em consideração o fato de que estamos usando o Eclipse ou qualquer IDE semelhante. Se você não usar, basta ter o Java instalado no seu computador e digitando a seguinte linha de comando "javac ReadWithScanner.java" e depois "java ReadWithScanner.class", visto que o caminho do .log deve ser especificado na variável filePathOfLog ReadWithScanner class.
+* Basicamente para "executar" o aplicativo principal (Parser), basta clicar em Run Java Application, levando em consideração o fato de que estamos usando o Eclipse ou qualquer IDE semelhante. Se você não usar, basta ter o Java instalado no seu computador e digitando a seguinte linha de comando "javac ReadWithScanner.java" e depois "java ReadWithScanner.class", visto que o caminho do .log deve ser especificado na variável filePathOfLog ReadWithScanner class.
 
 ### Configuração ###
 * Java
@@ -20,15 +20,15 @@ Basicamente para "executar" o aplicativo principal (Parser), basta clicar em Run
 * >test mvn.
 
 ### Com quem eu converso? ###
-Willian Brener Neves Dias
-https://www.linkedin.com/in/willian-brener-84673158?trk=hp-identity-name
+* Willian Brener Neves Dias
+* https://www.linkedin.com/in/willian-brener-84673158?trk=hp-identity-name
 --------------------------------------------------------------------------------------------------------------------------------
 # README #
 
-This README aims to explain the project as a whole and address some doubts about the execution.
+* This README aims to explain the project as a whole and address some doubts about the execution.
 
 ### What is this repository for? ###
-The project aims to carry out the reading of a file .log generator for the game Quake 3 and through this reading check some events during the games.
+* The project aims to carry out the reading of a file .log generator for the game Quake 3 and through this reading check some events during the games.
 Here are used as the Java programming language , in a Maven project due to the fact that there is the occurrence of downloading dependencies, it will be easier.
 It used the common file reading library Java Dickey with Regular Expression.
 Version *0.0.1*
