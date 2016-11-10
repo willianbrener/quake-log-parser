@@ -27,16 +27,19 @@ public class ReadWithScanner {
 
 
 	public static void main(String[] args) throws IOException {
+		//MÉTODO PRINCIPAL
 		ReadWithScanner parser = new ReadWithScanner(filePathOfLog);
 		parser.processLineByLine();
 		parser.log("Was fun. :)");
 	}
 
 	public ReadWithScanner(String aFileName) {
+		//MÉTODO CONSTRUTOR
 		fFilePath = Paths.get(aFileName);
 	}
 
 	public final void processLineByLine() throws IOException {
+		//MÉTODO QUE FARÁ A LEITURA LINHA POR LINHA DO ARQUIVO .LOG
 		try (Scanner scanner = new Scanner(fFilePath, ENCODING.name())) {
 			while (scanner.hasNextLine()) {
 				processLine(scanner.nextLine());
@@ -46,16 +49,19 @@ public class ReadWithScanner {
 
 	protected void processLine(String aLine) {
 		/*Scanner scanner = new Scanner(aLine);*/
-
+		//MÉTODO DE PROCESSAMENTO DE LINHA, ONDE SE USA EXPRESSÕES REGULARES PARA ENCONTRAR O PADRÃO DESEJADO.
 		Pattern kill = Pattern.compile("\\d+:\\d+ Kill: \\d+ \\d+ \\d+: (?<killer>.+) killed (?<killed>.+) by (?<weapon>\\w+)$");
 		Pattern initGame = Pattern.compile("\\d+:\\d+ ShutdownGame:$");
 		 Matcher matchKill = kill.matcher(aLine);
 		 Matcher matchInitGame = initGame.matcher(aLine);
 		
+		 //CASO ENCONTRE MORTE
 		  if (matchKill.find()) {
 		    String killer = matchKill.group("killer");
 		    String killed = matchKill.group("killed");
 		    String weapon = matchKill.group("weapon");
+		    
+		    //SE MORTE FOI PARA O <world> É RETIRADO 1 PONTO, CASO NÃO SEJA, É ADICIONADO.
 		    if (killer.equalsIgnoreCase("<world>")) {
 		    	if(killers.containsKey(killed)){
 		    		int i = killers.get(killed);
@@ -68,16 +74,19 @@ public class ReadWithScanner {
 		    		addWeapon(weapon);
 		    	}
 		    	
-		      // desconta kill do killed
+		      // DESCONTA KILL DO MORTO
 		    } else {
 		    	addKillers(killer);
 		    
 		    	addWeapon(weapon);		    
-		      // conta kill pro killer
-		      // atualiza lista de players (Put) com o killer e killed
-		      // conta estatistica de arma
+		      // CONTA KILL PRO KILLER
+		      // ATUALIZA LISTA DE PLAYERS (Put) COM QUEM MATOU E MORREU
+		      // CONTA ESTATÍSTICA DE ARMA
 		    }
 		  }
+		  
+		  //SE INICIO DE PARTIDA, É CHAMADO MÉTODO LOG PARA MOSTRAR OS DETALHES DA PARTIDA ANTERIOR E SÃO RESETADAS 
+		  //AS VARIAVEIS PARA QUE UMA NOVA PARTIDA SE DÊ INICIO.
 		  if(matchInitGame.find()){
 			  countGame++;
 			  log(mountLogPerGame(countGame, killers, weapons));
@@ -90,6 +99,7 @@ public class ReadWithScanner {
 		  }
 	}
 	
+	//ADICIONA ARMA
 	public void addWeapon(String weapon){
 		if(weapons.containsKey(weapon)){
     		int weaponValue = weapons.get(weapon);
@@ -99,6 +109,7 @@ public class ReadWithScanner {
     	}
 	}
 	
+	//ADICIONA MATADOR
 	public void addKillers(String killer){
 		if(killers.containsKey(killer)){
     		int killerValue = killers.get(killer);
@@ -109,6 +120,8 @@ public class ReadWithScanner {
     		totalKills++;
     	}
 	}
+	
+	//MÉTODO ONDE É MONTADO O JSON DO OUTPUT
 	public String mountLogPerGame(int gameCount, HashMap<String, Integer> mapKillers, HashMap<String, Integer> mapWeapon){
 		Set<String> chavesPlayers = mapKillers.keySet();
 		Set<String> chavesWeapons = mapWeapon.keySet();
@@ -143,6 +156,8 @@ public class ReadWithScanner {
 		System.out.println(String.valueOf(aObject));
 	}
 
+	
+	//----------------------GETTERS E SETTERS------------------------
 	public HashMap<String, Integer> getWeapons() {
 		return weapons;
 	}
